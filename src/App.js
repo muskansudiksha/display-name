@@ -19,20 +19,20 @@ const App=()=> {
         <label htmlFor="Firstname">First Name: </label>
         <input type="text" name="Firstname" required value={firstName} 
               onChange={(e)=>{
-                                setFirstName(e.target.value);
+                                setFirstName(e.target.value.trim());
                                 setFlag(false);
                               }} />
                               <br/>
         <label htmlFor="Lastname">Last Name: </label>
         <input type="text" name="Lastname" required value={lastName} 
         onChange={(e)=>{
-                          setLastName(e.target.value);
+                          setLastName(e.target.value.trim());
                           setFlag(false);
                         }} />
                       <br/>
         <button type='submit'>Submit</button>
       </form>
-      {flag && <p>Full Name : {firstName} {lastName}</p>}
+      {flag && <p>Full Name: {firstName} {lastName}</p>}
     </div>
   );
 }
